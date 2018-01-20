@@ -62,6 +62,7 @@ contract DappToken{
         Transfer(_from, _to, _value);
 
         return true;
+    }
 
 
 }
