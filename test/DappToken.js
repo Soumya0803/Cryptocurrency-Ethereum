@@ -8,6 +8,9 @@ var tokenInstance;
       return tokenInstance.totalSupply();
     }).then(function(totalSupply){
       assert.equal(totalSupply.toNumber(),1000000,'set the total no. to 100000');
+      return tokenInstance.balanceOf(accounts[0]);
+    }).then(function(adminBalance){
+      assert.equal(adminBalance.toNumber(),1000000,'it allocates initial supply to admin account')
     });
   });
 
