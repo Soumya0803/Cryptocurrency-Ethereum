@@ -17,6 +17,15 @@ it ('initializes the contract with correct values', function(){
     assert.equal(standard, 'DApp Token v1.0', 'has correct standard');
   });
   })
+  it('transfers token ownership', function(){
+    return DappToken.deployed().then(function(instance){
+      tokenInstance=instance;
+      //Test require statement first by ransferring something larger than the sender's balance
+      return tokeInstance.transfer.call(accounts[1], 9999999999999999999);
+    }).then(assert.fail).catch(function(errror){
+      assert(error.message.indexOf('revert'>=0, 'error message must contain revert'))
+    })
+  });
   it('sets the initial supply upon deployment',function(){
     return DappToken.deployed().then(function(instance){
       tokenInstance= instance;
