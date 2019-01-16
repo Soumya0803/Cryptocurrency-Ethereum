@@ -5,6 +5,7 @@ contract DappTokenSale{
    address admin;
    DappToken public tokenContract;
    uint256 public tokenPrice;
+   uint256 public tokensSold;
 
    event Sell(address _buyer, uint256 _amount);
 

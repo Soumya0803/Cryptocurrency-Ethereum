@@ -1,4 +1,5 @@
 pragma solidity ^0.4.2;
+import "./DappToken.sol";
 
 contract DappToken{
   //erc20
